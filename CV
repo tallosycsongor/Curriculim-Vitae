@@ -1,0 +1,43 @@
+Welcome to My DevOps Profile! 👋
+Hello, [Your Name]! I’m a dedicated DevOps Engineer focused on building scalable, resilient, and automated infrastructure. I bridge the gap between development and operations to deliver reliable software at high velocity.
+
+🚀 Core Skills
+Infrastructure as Code: Terraform, AWS CloudFormation, Ansible
+Containers & Orchestration: Docker, Kubernetes, ECS/EKS
+CI/CD Pipelines: GitHub Actions, Jenkins, GitLab CI/CD
+Cloud Platforms: AWS (EC2, S3, RDS, VPC), Azure, GCP
+Monitoring & Logging: Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana)
+Configuration Management: Chef, Puppet, SaltStack
+Networking & Security: VPC design, IAM, Vault, TLS/SSL
+🛠️ Featured Projects
+1. Automated Infrastructure Provisioning
+Description: Designed and implemented Terraform modules to provision multi-environment AWS infrastructure (dev/staging/prod).
+Technologies: Terraform, AWS CLI, S3 remote state, IAM policies
+Key Achievements:
+Reduced manual setup time by 80%
+Enforced least-privilege access with modular IAM roles
+Automated drift detection with periodic Terraform runs
+2. End-to-End CI/CD Pipeline
+Description: Built a scalable pipeline for containerized microservices using GitHub Actions and AWS EKS.
+Technologies: Docker, Kubernetes, GitHub Actions, Helm
+Key Achievements:
+Achieved zero-downtime deployments with rolling updates
+Integrated automated security scanning (Snyk, Trivy)
+Notifications and dashboards in Slack and Grafana
+3. Cloud Migration & Optimization
+Description: Led migration of on-prem services to AWS, re-architecting for cost efficiency and high availability.
+Technologies: AWS EC2 → ECS/EKS migration, RDS, Auto Scaling, CloudWatch
+Key Achievements:
+Cut infrastructure costs by 30% through right-sizing and spot instances
+Improved SLA uptime to 99.95% with multi-AZ deployments
+Implemented blue/green deployment strategy
+📚 Certifications & Training
+AWS Certified DevOps Engineer – Professional
+Certified Kubernetes Administrator (CKA)
+HashiCorp Certified: Terraform Associate
+“Advanced Infrastructure Automation” – [Training Provider]
+📫 Let’s Connect
+📧 Email: tallosy.csongor@gmail.com
+🌐 LinkedIn: https://www.linkedin.com/in/tallosycsongor/
+Keen to discuss infrastructure automation, scalable pipelines, or cloud architecture? Drop me a line!
+You can download my latest CV (PDF) here
