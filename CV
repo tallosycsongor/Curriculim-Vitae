@@ -1,117 +1,64 @@
-Welcome to My DevOps Profile! 👋
+# Hi, I'm Csongor 👋
 
-Hello, I’m Csongor, a DevOps / Platform Engineer focused on building scalable, resilient and automated infrastructure. I work mainly with Kubernetes-based platforms to bridge the gap between development and operations and deliver reliable services in regulated, cloud-native environments.
+I’m a **DevOps / Platform Engineer** working mainly with **Kubernetes-based platforms**, automation and cloud infrastructure.  
+I like turning manual, repetitive operations into **scripts, pipelines and GitOps** so things are reproducible and boringly reliable.
 
-🚀 Core Skills
+---
 
-Containers & Orchestration
+## 🔧 Tech Stack / Skills
 
-Docker, Kubernetes
+- **Containers & Orchestration**
+  - Docker, Kubernetes
+  - AWS EKS, Open Telekom Cloud CCE
+  - Helm, Kustomize, Argo CD (GitOps)
 
-AWS EKS, Open Telekom Cloud CCE
+- **Infrastructure as Code / Automation**
+  - Terraform, Ansible
+  - Kubernetes manifests, Helm charts
+  - Proxmox-based home lab for experiments
 
-Helm, Kustomize, GitOps (Argo CD)
+- **CI/CD**
+  - GitLab CI/CD, Jenkins, GitHub Actions
+  - Build & deploy pipelines for microservices
+  - Integrated checks: linting, image scanning, basic tests
 
-Infrastructure as Code & Automation
+- **Cloud & Platform**
+  - AWS (EKS, EC2, S3, IAM, VPC basics)
+  - Open Telekom Cloud (CCE, ECS, OBS, VPC)
+  - On-prem + hybrid environments
 
-Terraform, Ansible
+- **Monitoring, Logging & Reliability**
+  - Prometheus, Alertmanager, Grafana
+  - Loki, blackbox-exporter
+  - Dashboards, alerts, SLO/SLA-minded thinking
 
-Kubernetes manifests, Helm charts
+- **Security & Networking**
+  - Ingress, NetworkPolicies, service-to-service comms
+  - TLS/SSL, cert-manager, AWS PCA integration
+  - IAM, RBAC, secret management
 
-Proxmox-based home lab for testing and learning
+---
 
-CI/CD Pipelines
+## 🛠 What I Work On
 
-GitLab CI/CD, Jenkins, GitHub Actions
+- Operating and improving **multi-environment Kubernetes clusters** (dev/staging/prod)
+- Building and maintaining **GitOps-based deployments** with Argo CD
+- Creating and tuning **monitoring & logging** for apps and platform components
+- Using **Terraform + Ansible** to standardize and automate infrastructure tasks
 
-Build & deploy pipelines for microservices
+---
 
-Automated quality checks, security scans, and rollout strategies
+## 📚 Currently Learning
 
-Cloud & Platform
+- **Certified Kubernetes Administrator (CKA)** preparation  
+- **Linux / System Administration** (LFCS / RHCSA track)  
+- Deepening knowledge in **cloud security** and **platform reliability**
 
-AWS (EKS, EC2, S3, IAM, networking basics)
+---
 
-Open Telekom Cloud (CCE, ECS, OBS, VPC)
+## 📫 Contact
 
-On-prem & hybrid setups
+- Email: **tallosy.csongor@gmail.com**  
+- LinkedIn: **https://www.linkedin.com/in/tallosycsongor/**
 
-Monitoring, Logging & Reliability
-
-Prometheus, Alertmanager, Grafana
-
-Loki, blackbox-exporter, Kubernetes monitoring stacks
-
-Dashboards, alerting, SLO/SLA oriented thinking
-
-Networking & Security
-
-Kubernetes networking, Ingress, NetworkPolicies
-
-TLS/SSL, cert-manager, AWS PCA integration
-
-IAM concepts, RBAC, secret management, basic zero-trust/mTLS patterns
-
-🛠️ Featured Projects
-1. Kubernetes Platform & Infrastructure Automation
-
-Description: Operating and improving multi-environment Kubernetes clusters (dev/staging/prod) on AWS EKS and Open Telekom Cloud CCE, using Terraform and Ansible to standardize infrastructure.
-
-Technologies: Terraform, Ansible, Kubernetes, AWS EKS, OTC CCE, GitLab
-
-Highlights:
-
-Standardized cluster setups and namespaces across multiple environments
-
-Automated provisioning of core components (monitoring, logging, ingress, cert-manager)
-
-Reduced repetitive manual work by codifying changes as IaC
-
-2. GitOps-Based CI/CD for Microservices
-
-Description: Building CI/CD workflows for containerized applications with GitLab CI/Jenkins and Argo CD, focusing on safe and repeatable deployments.
-
-Technologies: GitLab CI, Jenkins, Docker, Helm, Argo CD, Kubernetes
-
-Highlights:
-
-GitOps flows from merge request → build → scan → deploy
-
-Rolling updates and canary-style changes where appropriate
-
-Integrated security and quality checks into the pipeline (image scanning, linting)
-
-3. Observability & Resource Optimization
-
-Description: Extending and tuning the monitoring stack for Kubernetes workloads, including metric/alert definitions and resource optimization.
-
-Technologies: Prometheus, Alertmanager, Grafana, Loki, blackbox-exporter, KRR (resource recommender)
-
-Highlights:
-
-Created dashboards for platform and application teams
-
-Helped align resource requests/limits with real usage to avoid waste and instability
-
-Improved incident visibility and troubleshooting with logs + metrics in one place
-
-📚 Certifications & Training
-
-Currently working towards / focusing on:
-
-Certified Kubernetes Administrator (CKA) – in progress
-
-Linux / System Administration certifications (LFCS / RHCSA track) – in progress
-
-Multiple DevOps, cloud and security-related trainings (Kubernetes, Terraform, cloud platform operations, monitoring & observability)
-
-(I prefer to list only certifications I have actually completed, so this section is intentionally honest and work-in-progress.)
-
-Let’s Connect
-
-Email: tallosy.csongor@gmail.com
-
-LinkedIn: https://www.linkedin.com/in/tallosycsongor/
-
-Open to conversations about Kubernetes platforms, GitOps, monitoring/observability, and secure, automated cloud infrastructure.
-If this resonates with what you’re building, feel free to reach out!
+If you’re into Kubernetes platforms, GitOps, observability or cloud automation, feel free to reach out. 🙂
