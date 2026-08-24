@@ -11,6 +11,7 @@ const lessons = [
     value: '3.8 s',
     detail: 'p95 http_request_duration_seconds',
     outcome: 'Latency spike found',
+    evidence: [['REQUEST RATE', '1,284 rpm'], ['ERROR RATE', '4.2%'], ['SLO TARGET', '< 2.0 s']],
   },
   {
     title: 'Follow the request',
@@ -19,6 +20,7 @@ const lessons = [
     value: '2.6 s',
     detail: 'POST /checkout -> payment-service',
     outcome: 'Bottleneck located',
+    evidence: [['gateway', '120 ms'], ['checkout-api', '180 ms'], ['payment-service', '2.6 s']],
   },
   {
     title: 'Find the culprit',
@@ -27,6 +29,7 @@ const lessons = [
     value: 'timeout',
     detail: 'payment provider deadline exceeded',
     outcome: 'Root cause confirmed',
+    evidence: [['EVENT', 'DEADLINE_EXCEEDED'], ['TRACE ID', '7f3a-8cd2-e114'], ['PROVIDER', 'payment-eu-01']],
   },
 ];
 
@@ -55,7 +58,7 @@ export function ObservabilityGame() {
         })}
       </div>
       <div className={`game-explanation ${activeLesson ? 'is-visible' : ''}`} aria-live="polite">
-        {activeLesson ? <><div><small>{activeLesson.label}</small><strong>{activeLesson.value}</strong><code>{activeLesson.detail}</code></div><p className="game-outcome">{activeLesson.outcome}</p>{step === 2 && <div className="game-solution"><small>MISSION COMPLETE</small><strong>Checkout route recovered</strong><span>+300 incident points</span></div>}</> : <div className="game-idle"><small>YOUR MOVE</small><strong>Open the first signal</strong><span>Three clues. One fast recovery.</span></div>}
+        {activeLesson ? <><div><small>{activeLesson.label}</small><strong>{activeLesson.value}</strong><code>{activeLesson.detail}</code></div><p className="game-outcome">{activeLesson.outcome}</p><div className={`game-evidence evidence-step-${step}`}><small>{step === 1 ? 'REQUEST TIMELINE' : 'LIVE EVIDENCE'}</small><div>{activeLesson.evidence.map(([label, value]) => <span key={label}><i /><b>{label}</b><strong>{value}</strong></span>)}</div></div>{step === 2 && <div className="game-solution"><small>MISSION COMPLETE</small><strong>Checkout route recovered</strong><span>+300 incident points</span></div>}</> : <div className="game-idle"><small>YOUR MOVE</small><strong>Open the first signal</strong><span>Three clues. One fast recovery.</span></div>}
       </div>
       <div className="game-footer"><span>{step === 2 ? 'STATUS / CUSTOMER CHECKOUT STABLE' : 'SIGNAL -> REQUEST -> CAUSE'}</span>{step === 2 && <button onClick={() => setStep(-1)} aria-label="Restart mission"><RotateCcw size={15} /></button>}</div>
     </aside>
