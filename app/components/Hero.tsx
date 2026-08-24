@@ -5,10 +5,11 @@ import { profile } from '../data';
 import { useLocale } from '../LocaleProvider';
 import { useState } from 'react';
 import { WorkModelMap } from './WorkModelMap';
+import { ObservabilityGame } from './ObservabilityGame';
 
 export function Hero() {
   const { t } = useLocale();
-  return <section className="hero section-shell" id="top"><div className="hero-copy"><p className="eyebrow"><span className="status-dot" /> {t('available')}</p><h1>{t('heroTitle')} <em>{t('heroAccent')}</em> {t('heroEnd')}</h1><p className="hero-lede">{t('heroLede')}</p><div className="hero-actions"><a className="button button-primary" href="#projects">{t('viewWork')} <ArrowUpRight size={17} /></a><a className="button button-quiet" href="#contact">{t('contactMe')} <ArrowDownRight size={17} /></a></div><div className="hero-proof"><span><CheckCircle2 size={16} /> {t('enterprise')}</span><span><CheckCircle2 size={16} /> {t('kubePractice')}</span><span><CheckCircle2 size={16} /> {t('family')}</span><span><CheckCircle2 size={16} /> {t('workModel')}</span></div><WorkModelMap /></div><ArchitectureVisual /></section>;
+  return <section className="hero section-shell" id="top"><div className="hero-copy"><p className="eyebrow"><span className="status-dot" /> {t('available')}</p><h1>{t('heroTitle')} <em>{t('heroAccent')}</em> {t('heroEnd')}</h1><p className="hero-lede">{t('heroLede')}</p><div className="hero-actions"><a className="button button-primary" href="#projects">{t('viewWork')} <ArrowUpRight size={17} /></a><a className="button button-quiet" href="#contact">{t('contactMe')} <ArrowDownRight size={17} /></a></div><div className="hero-proof"><span><CheckCircle2 size={16} /> {t('enterprise')}</span><span><CheckCircle2 size={16} /> {t('kubePractice')}</span><span><CheckCircle2 size={16} /> {t('family')}</span><span><CheckCircle2 size={16} /> {t('workModel')}</span></div><WorkModelMap /></div><ObservabilityGame /></section>;
 }
 
 function ArchitectureVisual() {
