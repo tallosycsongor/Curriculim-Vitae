@@ -43,7 +43,7 @@ export function ObservabilityGame() {
         <div><b>Restore checkout</b><span>The queue is growing. Find the signal, follow the request, catch the culprit.</span></div>
         <strong>{Math.max(step + 1, 0)} / 3</strong>
       </div>
-      <div className="game-signal" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /><i /></div>
+      <GrafanaChart recovered={step === 2} />
       <div className="game-steps">
         {lessons.map((lesson, index) => {
           const Icon = lesson.icon;
@@ -60,4 +60,22 @@ export function ObservabilityGame() {
       <div className="game-footer"><span>{step === 2 ? 'STATUS / CUSTOMER CHECKOUT STABLE' : 'SIGNAL -> REQUEST -> CAUSE'}</span>{step === 2 && <button onClick={() => setStep(-1)} aria-label="Restart mission"><RotateCcw size={15} /></button>}</div>
     </aside>
   );
+}
+
+function GrafanaChart({ recovered }: { recovered: boolean }) {
+  return <section className={`grafana-chart ${recovered ? 'is-recovered' : ''}`} aria-label="Grafana latency chart">
+    <header><span><i /> p95 latency / checkout-api</span><small>LAST 15 MINUTES</small></header>
+    <div className="grafana-plot">
+      <svg viewBox="0 0 560 170" preserveAspectRatio="none" role="img" aria-label={recovered ? 'Latency returned below the service level objective' : 'Latency exceeds the service level objective'}>
+        <g className="grafana-grid"><path d="M0 34H560M0 85H560M0 136H560M112 0V170M224 0V170M336 0V170M448 0V170" /></g>
+        <path className="grafana-threshold" d="M0 57H560" />
+        <path className="grafana-area" d={recovered ? 'M0 138 L0 123 C35 113 57 129 87 118 S139 92 166 109 S215 125 243 91 S292 28 323 61 S369 142 401 121 S450 83 480 106 S528 122 560 130 L560 170 L0 170 Z' : 'M0 138 L0 123 C35 113 57 129 87 118 S139 92 166 109 S215 125 243 91 S292 18 323 42 S369 130 401 108 S450 38 480 61 S528 109 560 89 L560 170 L0 170 Z'} />
+        <path className="grafana-line" d={recovered ? 'M0 123 C35 113 57 129 87 118 S139 92 166 109 S215 125 243 91 S292 28 323 61 S369 142 401 121 S450 83 480 106 S528 122 560 130' : 'M0 123 C35 113 57 129 87 118 S139 92 166 109 S215 125 243 91 S292 18 323 42 S369 130 401 108 S450 38 480 61 S528 109 560 89'} />
+        <circle className="grafana-point" cx="307" cy={recovered ? '37' : '20'} r="5" />
+      </svg>
+      <div className="grafana-y-label top">4.0s</div><div className="grafana-y-label slo">SLO 2.0s</div><div className="grafana-y-label bottom">0ms</div>
+      <div className="grafana-annotation"><b>{recovered ? 'RECOVERY' : 'ANOMALY'}</b><span>{recovered ? 'fallback active' : 'payment provider'}</span></div>
+    </div>
+    <footer><span><b>{recovered ? '1.1s' : '3.8s'}</b> p95</span><span><b>{recovered ? '99.95%' : '98.2%'}</b> success</span><span className={recovered ? 'chart-good' : 'chart-alert'}>{recovered ? 'SLO restored' : 'SLO breached'}</span></footer>
+  </section>;
 }
